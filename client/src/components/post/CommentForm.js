@@ -36,6 +36,15 @@ class CommentForm extends Component{
     this.props.addComment(postId,newComment);
     this.setState({text: ''});
   }
+
+  componentWillReceiveProps(nextProps){
+    if(nextProps.errors){
+      this.setState({
+        errors: nextProps.errors
+      });
+    }
+  }
+
   render(){
 
     const {errors} = this.state;

@@ -120,6 +120,7 @@ export const setPostLoading = () => {
 
 //Add comment
 export const addComment = (postId,commentData) => dispatch => {
+  dispatch(clearErrors());
   axios
     .post(`/api/posts/comment/${postId}`, commentData)
     .then(res =>

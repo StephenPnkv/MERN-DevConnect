@@ -1,6 +1,6 @@
 
-
-module.exports = {
-  mongoURI: 'mongodb+srv://Pnkv:1!mngdbEverlast2358@cluster0.axfkj.mongodb.net/<dbname>?retryWrites=true&w=majority',
-  secretOrKey: 'abc123'
-};
+if(process.env.NODE_ENV === 'production'){
+  module.exports = require('./keys_prod');
+}else{
+  module.exports = require('./keys_dev');
+}
