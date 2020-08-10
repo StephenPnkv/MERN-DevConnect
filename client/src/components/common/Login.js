@@ -3,7 +3,7 @@ import React, {useState,useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {loginUser} from '../../actions/authActions';
-import TextFieldGroup from '../common/TextFieldGroup';
+import TextfieldGroup from '../common/TextfieldGroup';
 
 const Login = (props) =>{
 
@@ -44,7 +44,7 @@ const Login = (props) =>{
           <h1 className="display-4 text-center"> Login</h1>
           <p className="lead text-center">Create your DevConnect accout</p>
           <form onSubmit={handleSubmit}>
-            <TextFieldGroup
+            <TextfieldGroup
               placeholder="Email Address"
               name="email"
               type="email"
@@ -52,7 +52,7 @@ const Login = (props) =>{
               error={errors.email}
               onChange={handleChange}
             />
-            <TextFieldGroup
+            <TextfieldGroup
               placeholder="Email Address"
               name="password"
               type="password"

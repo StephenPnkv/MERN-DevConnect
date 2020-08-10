@@ -70,12 +70,13 @@ const ProfileSchema = new Schema({
         type: String,
         required: true
       },
-      fieldOfStudy: {
+      degree: {
         type: String,
         required: true
       },
-      location: {
+      fieldOfStudy: {
         type: String,
+        required: true
       },
       from: {
         type: Date,

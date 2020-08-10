@@ -1,8 +1,16 @@
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Link} from 'react-router-dom';
+import {PropTypes} from 'prop-types';
+import {connect} from 'react-redux';
 
-const Landing = () =>{
+const Landing = (props) =>{
+
+  useEffect(() => {
+    if(props.auth.isAuthenticated){
+      props.history.push('/dashboard');
+    }
+  },[props]);
 
   return(
     <div className="landing">
@@ -24,4 +32,12 @@ const Landing = () =>{
   );
 }
 
-export default Landing;
+Landing.propTypes = {
+  auth: PropTypes.object.isRequired
+}
+
+const mapStateToProps = (state) => ({
+  auth: state.auth
+});
+
+export default connect(mapStateToProps)(Landing);
